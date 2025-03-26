@@ -1,2 +1,40 @@
 # AI-Lab
-Practicals
+
+# 📌 Project Aims
+# 🔹 Graph Traversal Algorithms
+1️⃣ Implement Breadth-First Search (BFS) on a given dataset
+2️⃣ Implement Depth-First Search (DFS) on a given dataset
+
+# ♟️ Constraint Satisfaction Problem
+3️⃣ Solve the 8-Queens Problem with suitable assumptions
+
+# 📖 Natural Language Processing (NLP) with Open-Source Tools
+4️⃣ Introduction to open-source NLP tools like NLTK, spaCy, etc.
+
+# 📝 Text Preprocessing for NLP Applications
+5️⃣ Perform text preprocessing on a chosen case study application
+-> Implement a program to perform tokenization
+-> Eliminate stopwords
+-> Apply stemming using NLTK
+
+# 📊 Feature Engineering in NLP
+6️⃣ Implement a Python program to compute Term Frequency (TF) and Inverse Document Frequency (IDF)
+7️⃣ Perform feature extraction and analysis techniques on processed text
+
+# 🤖 AI Algorithms for NLP Analysis
+8️⃣ Develop an NLP-based Spam Filter using Python
+
+# 🏎️ AI-Based Robotics & Decision Systems
+9️⃣ Implement the Robot Traversal Problem using Perceptron models and multi-category models
+
+# 🎮 AI in Game Development
+🔟 Implement a Tic-Tac-Toe game using Python
+
+# 🏥 Expert Systems & Case Studies
+1️⃣1️⃣ Implement AI-driven Expert Systems:
+-> Course Advisor Expert System: Performance Assessment in Medical Expert Systems
+
+# Real-World AI Case Studies
+1️⃣2️⃣ Implement AI solutions for real-world NLP tasks:
+-> Sentiment Analysis using NLP
+->Fake News Detection using NLP
