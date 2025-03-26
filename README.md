@@ -19,7 +19,20 @@
 
 
 
-2️⃣ Implement Depth-First Search (DFS) on a given dataset
+## 2️⃣ Implement Depth-First Search (DFS) on a given dataset
+
+### 🔹 Concept  
+- DFS is a traversal technique that explores as **deep as possible** before backtracking.  
+- It follows a **recursive approach** or uses an **explicit stack (LIFO - Last In, First Out)**.  
+- DFS is useful for solving problems like **maze traversal, cycle detection, and topological sorting**.  
+
+### 🔹 Algorithm  
+- Initialize an empty **stack** (or use recursion) and a **visited set**.  
+- Add the **starting node** to the stack and mark it as visited.  
+- While the stack is **not empty**:  
+  - Pop a node from the stack and process it.  
+  - Add all its **unvisited neighbors** to the stack and mark them as visited.  
+- Repeat until all reachable nodes are visited.  
 
 # ♟️ Constraint Satisfaction Problem
 3️⃣ Solve the 8-Queens Problem with suitable assumptions
