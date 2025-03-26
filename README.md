@@ -2,19 +2,21 @@
 
 # 📌 Project Aims
 # 🔹 Graph Traversal Algorithms
-1️⃣ Implement Breadth-First Search (BFS) on a given dataset
-📍 Breadth-First Search (BFS)
-🔹 Concept
-->BFS is a level-wise traversal technique.
-->It explores all nodes at the current depth before moving deeper.
-->Uses a queue (FIFO - First In, First Out) to process nodes in the order they were discovered.
-🔹 Algorithm
-->Initialize an empty queue and a visited set.
-->Add the starting node to the queue and mark it as visited.
-->While the queue is not empty:
-->Dequeue a node and process it.
-->Add all its unvisited neighbors to the queue and mark them as visited.
-->Repeat until all reachable nodes are visited.
+## 1️⃣ Implement Breadth-First Search (BFS) on a given dataset
+
+### 🔹 Concept  
+- BFS is a level-wise traversal technique.  
+- It explores all nodes at the current depth before moving deeper.  
+- Uses a queue (FIFO - First In, First Out) to process nodes in the order they were discovered.  
+
+### 🔹 Algorithm  
+- Initialize an empty queue and a visited set.  
+- Add the starting node to the queue and mark it as visited.  
+- While the queue is not empty:  
+  - Dequeue a node and process it.  
+  - Add all its unvisited neighbors to the queue and mark them as visited.  
+- Repeat until all reachable nodes are visited.  
+
 
 
 2️⃣ Implement Depth-First Search (DFS) on a given dataset
