@@ -36,7 +36,22 @@
 
 # ♟️ Constraint Satisfaction Problem
 3️⃣ Solve the 8-Queens Problem with suitable assumptions
+### 🔹 Concept
+The 8-Queens Problem is a classic Constraint Satisfaction Problem (CSP) in which 8 queens must be placed on an 8×8 chessboard so that no two queens attack each other.
+- A queen can attack another queen if they are:
+- In the same row
+- In the same column
+- On the same diagonal
+- The goal is to place all 8 queens on the board without conflicts.
 
+### 🔹 Algorithm (Backtracking Approach)
+- Start from the first column (col = 0) and try placing a queen in each row.
+- Check if placing the queen is safe (i.e., no other queen attacks it).
+- Ensure no other queen exists in the same row, column, or diagonal.
+- If safe, place the queen and recursively move to the next column.
+- If a column has no valid placement, backtrack (remove the last placed queen and try the next possibility).
+- Repeat until all 8 queens are placed successfully.
+  
 # 📖 Natural Language Processing (NLP) with Open-Source Tools
 4️⃣ Introduction to open-source NLP tools like NLTK, spaCy, etc.
 
