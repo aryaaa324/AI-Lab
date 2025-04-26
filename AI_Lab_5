@@ -1,0 +1,29 @@
+# 5. Write a python program to find Term Frequency and Inverse Document Frequency (TF-IDF).
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+documents = [
+    "The cat is on the mat",
+    "The dog is in the fog",
+    "The cat and the dog are friends"
+]
+
+vectorizer = TfidfVectorizer()
+
+tfidf_matrix = vectorizer.fit_transform(documents)
+
+terms = vectorizer.get_feature_names_out()
+
+dense_matrix = tfidf_matrix.todense()
+
+print("TF-IDF Matrix:")
+print(dense_matrix)
+
+print("\nFeature Names (Terms):")
+print(terms)
+
+print("\nTF-IDF values for each term in each document:")
+for i, doc in enumerate(documents):
+    print(f"\nDocument {i+1}: {doc}")
+    for j, term in enumerate(terms):
+        print(f"{term}: {dense_matrix[i, j]:.4f}")
