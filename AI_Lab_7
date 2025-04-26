@@ -1,0 +1,38 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
+documents = [
+    "The weather today is sunny with clear skies",
+    "Artificial intelligence is transforming healthcare",
+    "I love reading books on historical events",
+    "AI chatbots are improving customer service",
+    "Rainy days make me feel nostalgic",
+    "Hospitals use machine learning to predict diseases",
+    "A walk in nature boosts mental health",
+    "Doctors rely on data to make better decisions",
+    "Watching documentaries is my weekend ritual",
+    "Healthcare systems benefit from real-time analytics"
+]
+
+labels = [0, 1, 2, 1, 0, 1, 0, 1, 2, 1]
+
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(documents)
+
+X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.3, random_state=42)
+model = MultinomialNB()
+model.fit(X_train, y_train)
+pred = model.predict(X_test)
+acc = accuracy_score(y_test, pred)
+
+print("NLP Classification Results")
+for i, (actual, predicted) in enumerate(zip(y_test, pred)):
+    print(f"Doc {i+1}: Actual = {actual}, Predicted = {predicted}")
+
+print("\nEvaluation Metrics")
+print(f"Accuracy       : {accuracy_score(y_test, pred):.2f}")
+print(f"Precision      : {precision_score(y_test, pred, average='weighted', zero_division=0):.2f}")
+print(f"Recall         : {recall_score(y_test, pred, average='weighted', zero_division=0):.2f}")
+print(f"F1 Score       : {f1_score(y_test, pred, average='weighted', zero_division=0):.2f}")
