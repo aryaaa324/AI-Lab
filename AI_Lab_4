@@ -1,0 +1,22 @@
+# 4. Implement a program to perform tokenization, eliminate stopwords and perform stemming using nltk.
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+from nltk.tokenize import word_tokenize
+
+nltk.download('punkt_tab')
+nltk.download('stopwords')
+
+text = "The cats are playing with their toys and chasing mice."
+
+tokens = word_tokenize(text.lower())
+
+stop_words = set(stopwords.words('english'))
+filtered_tokens = [w for w in tokens if w not in stop_words and w.isalpha()]
+
+stemmer = PorterStemmer()
+stemmed_tokens = [stemmer.stem(w) for w in filtered_tokens]
+
+print("Original:", tokens)
+print("Filtered:", filtered_tokens)
+print("Stemmed:", stemmed_tokens)
