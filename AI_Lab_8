@@ -1,48 +1,46 @@
-def print_board(board):
-    print("\n")
-    print(f" {board[0]} | {board[1]} | {board[2]} ")
-    print("---|---|---")
-    print(f" {board[3]} | {board[4]} | {board[5]} ")
-    print("---|---|---")
-    print(f" {board[6]} | {board[7]} | {board[8]} ")
-    print("\n")
+# Install dependencies if not already installed:
+# pip install pandas scikit-learn
 
-def check_winner(board, player):
-    win_conditions = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8],
-        [0, 3, 6], [1, 4, 7], [2, 5, 8],
-        [0, 4, 8], [2, 4, 6]
-    ]
-    for condition in win_conditions:
-        if all(board[i] == player for i in condition):
-            return True
-    return False
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
-def is_draw(board):
-    return all(cell in ['X', 'O'] for cell in board)
+# Load Dataset
+# Replace with your file path if needed
+df = pd.read_csv("https://raw.githubusercontent.com/justmarkham/pycon-2016-tutorial/master/data/sms.tsv", sep='\t', names=['label', 'message'])
 
-def play_game():
-    board = ['1','2','3','4','5','6','7','8','9']
-    current_player = 'X'
-    while True:
-        print_board(board)
-        move = input(f"Player {current_player}, enter your move (1-9): ")
-        if not move.isdigit() or int(move) < 1 or int(move) > 9:
-            print("Invalid input. Choose a number from 1 to 9.")
-            continue
-        index = int(move) - 1
-        if board[index] in ['X', 'O']:
-            print("Spot already taken. Choose another one.")
-            continue
-        board[index] = current_player
-        if check_winner(board, current_player):
-            print_board(board)
-            print(f"🎉 Player {current_player} wins!")
-            break
-        if is_draw(board):
-            print_board(board)
-            print("It's a draw!")
-            break
-        current_player = 'O' if current_player == 'X' else 'X'
+print(df.head())
 
-play_game()
+# Encode labels (spam=1, ham=0)
+df['label_num'] = df.label.map({'ham':0, 'spam':1})
+
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(df['message'], df['label_num'], test_size=0.2, random_state=42)
+
+# Text Preprocessing: TF-IDF Vectorization
+vectorizer = TfidfVectorizer(stop_words='english')
+X_train_tfidf = vectorizer.fit_transform(X_train)
+X_test_tfidf = vectorizer.transform(X_test)
+
+# Train Naive Bayes Model
+nb_model = MultinomialNB()
+nb_model.fit(X_train_tfidf, y_train)
+
+#  Predict and Evaluate Naive Bayes
+y_pred_nb = nb_model.predict(X_test_tfidf)
+print("\n🔹 Naive Bayes Accuracy:", accuracy_score(y_test, y_pred_nb))
+print(confusion_matrix(y_test, y_pred_nb))
+print(classification_report(y_test, y_pred_nb))
+
+# Train Logistic Regression Model
+lr_model = LogisticRegression()
+lr_model.fit(X_train_tfidf, y_train)
+
+# Predict and Evaluate Logistic Regression
+y_pred_lr = lr_model.predict(X_test_tfidf)
+print("\n🔹 Logistic Regression Accuracy:", accuracy_score(y_test, y_pred_lr))
+print(confusion_matrix(y_test, y_pred_lr))
+print(classification_report(y_test, y_pred_lr))
