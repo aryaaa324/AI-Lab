@@ -1,6 +1,21 @@
 # AI-Lab
 
 # 📌 Project Aims
+| **S.No** | **Practical Title**              | **Aim / Objective**                                                                                                         |
+| :------: | :------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
+|    1️⃣   | Implement BFS                    | Implement Breadth-First Search (BFS) traversal on a given graph dataset using queue-based level-order traversal.            |
+|    2️⃣   | Implement DFS                    | Implement Depth-First Search (DFS) traversal on a given graph dataset using stack or recursion for deep exploration.        |
+|    3️⃣   | Solve 8-Queens Problem           | Solve the 8-Queens problem using backtracking to place 8 queens without conflicts on an 8×8 chessboard.                     |
+|    4️⃣   | Explore NLP Tools                | Explore and demonstrate open-source NLP libraries such as NLTK and spaCy for text processing tasks.                         |
+|    5️⃣   | Perform Text Preprocessing       | Implement tokenization, stopword removal, and stemming using NLTK on a sample text corpus.                                  |
+|    6️⃣   | Compute TF & IDF                 | Write a Python program to compute Term Frequency (TF) and Inverse Document Frequency (IDF) for a text dataset.              |
+|    7️⃣   | Feature Extraction & Analysis    | Perform feature extraction techniques (word count, n-grams, TF-IDF) and analyze feature importance in text.                 |
+|    8️⃣   | NLP-based Spam Filter            | Develop an NLP-based spam filter using machine learning models (Naive Bayes, Logistic Regression) with TF-IDF features.     |
+|    9️⃣   | Robot Traversal using Perceptron | Implement robot traversal problem simulation using perceptron and multi-class classification models for movement decisions. |
+|    🔟    | Tic-Tac-Toe Game                 | Build a Tic-Tac-Toe game in Python with basic AI and game logic for interactive play.                                       |
+|  1️⃣1️⃣  | AI-driven Expert System          | Implement a prototype expert system using AI techniques for automated decision support in a domain.                         |
+|  1️⃣2️⃣  | AI for Real-World NLP            | Develop an AI system for real-world NLP tasks (e.g., automated RFP evaluation) using LangChain, RAG, and LLM-based agents.  |
+
 # 🔹 Graph Traversal Algorithms
 ## 1️⃣ Implement Breadth-First Search (BFS) on a given dataset
 
